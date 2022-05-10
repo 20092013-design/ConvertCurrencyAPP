@@ -1,0 +1,29 @@
+<form #form="ngForm" (submit)="OnSubmit(form)">
+<input type="hidden" name="CurrencyId" [(ngModel)]="service.formData.CurrencyId" #CurrencyId="ngModel">
+
+<div class="form-group ">
+ <label>From Currency</label>
+<input class="form-control" name="CurrencyName" #CurrencyName="ngModel" [(ngModel)]="service.formData.CurrencyName"
+ required  (keyup)=AmountBalance()>  
+</div>
+<br>
+<div class="form-group ">
+    <label>Amount</label>
+   <input class="form-control" name="Amount" (keyup)=AmountBalance() [(ngModel)]="Amount">
+   </div>
+   <br>
+   <div class="form-group">
+    <label>To Currency</label>
+   <input class="form-control" name="CurrencyName1" (keyup)=AmountBalance() [(ngModel)]="CurrencyName1"
+    >
+    </div>
+    <br>
+   <div class="form-group ">
+    <label>Converted Amount</label>
+   <input class="form-control" name="convertedAmount" (keyup)=AmountBalance() [(ngModel)]="convertedAmount">
+   </div>
+   <br>
+   <div class="form-group ">    
+   <button class="btn btn-info"  type="submit" >SUBMIT</button>
+   </div>
+</form>
